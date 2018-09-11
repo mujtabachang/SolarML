@@ -34,7 +34,7 @@ def to_rgb3a(im):
     # we can use the same array 3 times, converting to
     # uint8 first
     # this explicitly converts to np.uint8 once and is short
-    return np.dstack([im.astype(np.uint8)] * 3)
+    return np.dstack([im] * 3)
 
 
 
