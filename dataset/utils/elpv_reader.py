@@ -55,9 +55,10 @@ def load_dataset(fname=None):
 
     def load_cell_image(fname):
         with Image.open(fname) as image:
+            image.convert("RGB")                            # MY ADDITION
             image.thumbnail((224,224),Image.ANTIALIAS)      # MY ADDTION
             #return np.asarray(image)                       # ORIGINAL RETURN
-            return to_rgb3a( np.asarray(image) )            # MY RETURN
+            return  np.asarray(image)             # MY RETURN
 
     dir = os.path.dirname(fname)
 
