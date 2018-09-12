@@ -47,6 +47,7 @@ def load_dataset(fname=None):
     def load_cell_image(fname):
         with Image.open(fname) as image:
             image.resize(size=(224,224))                    # MY ADDTION
+            image.convert(mode='rgb')                            # Conversation to RBG
             return np.asarray(image)                        # ORIGINAL RETURN
 
 
