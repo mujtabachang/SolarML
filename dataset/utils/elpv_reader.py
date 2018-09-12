@@ -29,15 +29,6 @@ from PIL import Image
 import numpy as np
 import os
 
-# ENTIRELY MY ADDITION
-def to_rgb3a(im):
-    # we can use the same array 3 times, converting to
-    # uint8 first
-    # this explicitly converts to np.uint8 once and is short
-    return np.dstack([im] * 3)
-
-
-
 
 def load_dataset(fname=None):
     if fname is None:
@@ -55,10 +46,9 @@ def load_dataset(fname=None):
 
     def load_cell_image(fname):
         with Image.open(fname) as image:
-            image.convert("RGB")                            # MY ADDITION
             image.resize(size=(224,224))                    # MY ADDTION
-            #return np.asarray(image)                       # ORIGINAL RETURN
-            return  np.asarray(image)             # MY RETURN
+            return np.asarray(image)                        # ORIGINAL RETURN
+
 
     dir = os.path.dirname(fname)
 
