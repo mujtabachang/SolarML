@@ -56,7 +56,6 @@ def load_dataset(fname=None):
     def load_cell_image(fname):
         with Image.open(fname) as image:
             image.convert("RGB")                            # MY ADDITION
-            image.resize(size=(224,224))                    # MY ADDTION
             #return np.asarray(image)                       # ORIGINAL RETURN
             return  np.asarray(image)             # MY RETURN
 
